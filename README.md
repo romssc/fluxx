@@ -55,7 +55,7 @@ This message will also contain some of your **Config** settings, just for conven
 [Index](#index)
 
 [Functions](#functions)
-- [func New(Config) *App](#funcNew)
+- [func New(c Config) *App](#funcNew)
 - [func HandlerFuncAdapter(h FluxxHandlerFunc) http.HandlerFunc](#funcHandlerFuncAdapter)
 
 [Types](#types)
@@ -76,6 +76,22 @@ This message will also contain some of your **Config** settings, just for conven
 - [type FluxxHandlerFunc](#typeFluxxHandlerFunc)
 
 [Variables](#variables)
+
+## Functions <a name="functions"></a>
+
+### func New <a name="funcNew"></a>
+
+```go
+func New(c Config) *App
+```
+
+### func HandlerFuncAdapter <a name="funcHandlerFuncAdapter"></a>
+
+```go
+func HandlerFuncAdapter(h FluxxHandlerFunc) http.HandlerFunc
+```
+
+***HandlerFuncAdapter** adapts a **FluxxHandlerFunc** into a standard **http.HandlerFunc**.*
 
 ## Types <a name="types"></a>
 
@@ -153,83 +169,77 @@ func (c *Ctx) Send() *Sender
 
 ***Send** returns the response sender.*
 
-⸻
+### type Reader <a name="typeReader"></a>
 
-type Reader {#Reader}
-
+```go
 type Reader struct {
     Request *http.Request
 }
+```
 
-Reader provides methods for accessing request data.
+***Reader** provides methods for accessing request data.*
 
-func (r *Reader) QueryParam(key string, defaultValue …string) (string, bool) {#Reader.QueryParam}
+#### func QueryParam <a name="readerFuncQueryParam"></a>
 
+```go
 func (r *Reader) QueryParam(key string, defaultValue ...string) (string, bool)
+```
 
-QueryParam returns the query parameter by key. If not present, an optional default value may be used.
-The second return value indicates whether a value was found or defaulted.
+***QueryParam** returns the query parameter by key. If not present, an optional default value may be used. The second return value indicates whether a value was found or defaulted.*
 
-⸻
+### type Sender <a name="typeSender"></a>
 
-type Sender {#Sender}
-
+```go
 type Sender struct {
     Writer http.ResponseWriter
     // contains filtered or unexported fields
 }
+```
 
-Sender provides methods for writing responses.
+***Sender** provides methods for writing responses.*
 
-func (s *Sender) Error(status int, message string) {#Sender.Error}
+### func Error <a name="senderFuncError"></a>
 
+```go
 func (s *Sender) Error(status int, message string)
+```
 
-Error sends an HTTP error response with the given status code and message.
+***Error** sends an HTTP error response with the given status code and message.*
 
-func (s *Sender) JSON(status int, data any, customHeaders …map[string]string) error {#Sender.JSON}
+### func JSON <a name="senderFuncJSON"></a>
 
+```go
 func (s *Sender) JSON(status int, data any, customHeaders ...map[string]string) error
+```
 
-JSON sends a JSON response with the given status code, data, and optional headers.
+***JSON** sends a JSON response with the given status code, data, and optional headers.*
 
-func (s *Sender) File(content, filename, path string, customHeaders …map[string]string) {#Sender.File}
+### func File <a name="senderFuncFile"></a>
 
+```go
 func (s *Sender) File(content, filename, path string, customHeaders ...map[string]string)
+```
 
-File serves a file response with content type and disposition headers.
+***File** serves a file response with content type and disposition headers.*
 
-⸻
+## type FluxxHandlerFunc <a name="typeFluxxHandlerFunc"></a>
 
-type FluxxHandlerFunc {#FluxxHandlerFunc}
-
+```go
 type FluxxHandlerFunc func(c *Ctx)
+```
 
-FluxxHandlerFunc defines a handler that operates on a Fluxx context.
+***FluxxHandlerFunc** defines a handler that operates on a **Fluxx** context.*
 
-func HandlerFuncAdapter(h FluxxHandlerFunc) http.HandlerFunc {#HandlerFuncAdapter}
+## Variables <a name="variables"></a>
 
-func HandlerFuncAdapter(h FluxxHandlerFunc) http.HandlerFunc
+```go
+ErrListening    = errors.New("[ERROR] fluxx: FAILED WHILE LISTENING")
+ErrShuttingDown = errors.New("[ERROR] fluxx: FAILED WHILE SHUTTING DOWN")
+```
 
-HandlerFuncAdapter adapts a FluxxHandlerFunc into a standard http.HandlerFunc.
+*Error values returned by server lifecycle operations.*
 
-⸻
+## License
 
-Variables {#Variables}
+[MIT](https://opensource.org/license/mit)
 
-var (
-    ErrListening    = errors.New("[ERROR] fluxx: FAILED WHILE LISTENING")
-    ErrShuttingDown = errors.New("[ERROR] fluxx: FAILED WHILE SHUTTING DOWN")
-)
-
-Error values returned by server lifecycle operations.
-
-⸻
-
-License
-
-MIT © romssc
-
-⸻
-
-Would you like me to also generate badges (Go Report Card, pkg.go.dev, etc.) and a status section (like “⚠️ under development”) at the top of the README to make it look more polished for GitHub?
