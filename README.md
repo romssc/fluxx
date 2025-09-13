@@ -4,7 +4,7 @@
 
 Designed to stay close to the **Go** **[standard library](https://pkg.go.dev/std)**, but with just enough ergonomics to make your web server development simpler!
 
-## 🧙‍♂️ Quick Start
+## ⚡ Quick Start
 
 This guide will follow you through your first steps to use this package.
 
@@ -79,13 +79,13 @@ This message will also contain some of your **Config** settings, just for conven
 
 ## Functions <a name="functions"></a>
 
-### func New <a name="funcNew"></a>
+#### func New <a name="funcNew"></a>
 
 ```go
 func New(c Config) *App
 ```
 
-### func HandlerFuncAdapter <a name="funcHandlerFuncAdapter"></a>
+#### func HandlerFuncAdapter <a name="funcHandlerFuncAdapter"></a>
 
 ```go
 func HandlerFuncAdapter(h FluxxHandlerFunc) http.HandlerFunc
@@ -95,7 +95,7 @@ func HandlerFuncAdapter(h FluxxHandlerFunc) http.HandlerFunc
 
 ## Types <a name="types"></a>
 
-### type App <a name="typeApp"></a>
+#### type App <a name="typeApp"></a>
 
 ```go
 type App struct {
@@ -129,7 +129,7 @@ func (a *App) GracefulShutdown(timeout time.Duration) error
 
 ***GracefulShutdown** attempts to shut down the server gracefully within the given timeout.*
 
-### type Config <a name="typeConfig"></a>
+#### type Config <a name="typeConfig"></a>
 
 ```go
 type Config struct {
@@ -143,7 +143,7 @@ type Config struct {
 
 ***Config** holds the configuration options for creating a new **App**.*
 
-### type Ctx <a name="typeCtx"></a>
+#### type Ctx <a name="typeCtx"></a>
 
 ```go
 type Ctx struct {
@@ -169,7 +169,7 @@ func (c *Ctx) Send() *Sender
 
 ***Send** returns the response sender.*
 
-### type Reader <a name="typeReader"></a>
+#### type Reader <a name="typeReader"></a>
 
 ```go
 type Reader struct {
@@ -187,7 +187,7 @@ func (r *Reader) QueryParam(key string, defaultValue ...string) (string, bool)
 
 ***QueryParam** returns the query parameter by key. If not present, an optional default value may be used. The second return value indicates whether a value was found or defaulted.*
 
-### type Sender <a name="typeSender"></a>
+#### type Sender <a name="typeSender"></a>
 
 ```go
 type Sender struct {
@@ -198,7 +198,7 @@ type Sender struct {
 
 ***Sender** provides methods for writing responses.*
 
-### func Error <a name="senderFuncError"></a>
+#### func Error <a name="senderFuncError"></a>
 
 ```go
 func (s *Sender) Error(status int, message string)
@@ -206,7 +206,7 @@ func (s *Sender) Error(status int, message string)
 
 ***Error** sends an HTTP error response with the given status code and message.*
 
-### func JSON <a name="senderFuncJSON"></a>
+#### func JSON <a name="senderFuncJSON"></a>
 
 ```go
 func (s *Sender) JSON(status int, data any, customHeaders ...map[string]string) error
@@ -214,7 +214,7 @@ func (s *Sender) JSON(status int, data any, customHeaders ...map[string]string) 
 
 ***JSON** sends a JSON response with the given status code, data, and optional headers.*
 
-### func File <a name="senderFuncFile"></a>
+#### func File <a name="senderFuncFile"></a>
 
 ```go
 func (s *Sender) File(content, filename, path string, customHeaders ...map[string]string)
@@ -222,7 +222,7 @@ func (s *Sender) File(content, filename, path string, customHeaders ...map[strin
 
 ***File** serves a file response with content type and disposition headers.*
 
-## type FluxxHandlerFunc <a name="typeFluxxHandlerFunc"></a>
+#### type FluxxHandlerFunc <a name="typeFluxxHandlerFunc"></a>
 
 ```go
 type FluxxHandlerFunc func(c *Ctx)
@@ -239,7 +239,8 @@ ErrShuttingDown = errors.New("[ERROR] fluxx: FAILED WHILE SHUTTING DOWN")
 
 *Error values returned by server lifecycle operations.*
 
-## License
+## 🏴󠁩󠁤󠁳󠁭󠁿 License
 
 [MIT](https://opensource.org/license/mit)
+
 
