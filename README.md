@@ -54,6 +54,8 @@ This message will also contain some of your **Config** settings, just for conven
 
 [Index](#index)
 
+[Variables](#variables)
+
 [Functions](#functions)
 - [func New(c Config) *App](#funcNew)
 - [func HandlerFuncAdapter(h FluxxHandlerFunc) http.HandlerFunc](#funcHandlerFuncAdapter)
@@ -75,9 +77,16 @@ This message will also contain some of your **Config** settings, just for conven
     - [func (s *Sender) File(content, filename, path string, customHeaders …map[string]string)](#senderFuncFile)
 - [type FluxxHandlerFunc](#typeFluxxHandlerFunc)
 
-[Variables](#variables)
+### Variables <a name="variables"></a>
 
-## Functions <a name="functions"></a>
+```go
+ErrListening    = errors.New("[ERROR] fluxx: FAILED WHILE LISTENING")
+ErrShuttingDown = errors.New("[ERROR] fluxx: FAILED WHILE SHUTTING DOWN")
+```
+
+*Error values returned by server lifecycle operations.*
+
+### Functions <a name="functions"></a>
 
 #### func New <a name="funcNew"></a>
 
@@ -93,7 +102,7 @@ func HandlerFuncAdapter(h FluxxHandlerFunc) http.HandlerFunc
 
 ***HandlerFuncAdapter** adapts a **FluxxHandlerFunc** into a standard **http.HandlerFunc**.*
 
-## Types <a name="types"></a>
+### Types <a name="types"></a>
 
 #### type App <a name="typeApp"></a>
 
@@ -105,7 +114,7 @@ type App struct {
 
 ***App** represents the **Fluxx** HTTP application. It manages server configuration and lifecycle.*
 
-#### func Listen <a name="appFuncListen"></a>
+#### func Listen <a name="appFuncListen">
 
 ```go
 func (a *App) Listen() error
@@ -230,17 +239,9 @@ type FluxxHandlerFunc func(c *Ctx)
 
 ***FluxxHandlerFunc** defines a handler that operates on a **Fluxx** context.*
 
-## Variables <a name="variables"></a>
-
-```go
-ErrListening    = errors.New("[ERROR] fluxx: FAILED WHILE LISTENING")
-ErrShuttingDown = errors.New("[ERROR] fluxx: FAILED WHILE SHUTTING DOWN")
-```
-
-*Error values returned by server lifecycle operations.*
-
 ## 🏴󠁩󠁤󠁳󠁭󠁿 License
 
 [MIT](https://opensource.org/license/mit)
+
 
 
