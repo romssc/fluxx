@@ -1,4 +1,6 @@
-⚠️ ***Status:** package is under development — APIs may change.*
+⚠️ ***Status:** package is under development - APIs may change.*
+
+---
 
 <img src="https://github.com/user-attachments/assets/d5447791-c42c-421b-9bde-fdbbdad407f1" alt="logo" width="200"/>
 
@@ -254,6 +256,7 @@ type FluxxHandlerFunc func(c *Ctx)
 ## 🏴󠁩󠁤󠁳󠁭󠁿 License
 
 [MIT](https://opensource.org/license/mit)
+
 
 
 
