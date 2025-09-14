@@ -18,7 +18,7 @@ go get -u github.com/romssc/fluxx
 
 ### Use it
 
-Getting started with **Fluxx** is easy. Here's a basic example to create a simple web server that responds with "hello!" on the root path. This example demonstrates initializing a new **Fluxx** **App**, setting up a route, and starting the server.
+Getting started with **Fluxx** is easy. Here's a basic example to create a simple web server that responds with "hello!" on the root path. This example demonstrates initializing a new **Fluxx** **[App](#typeApp)**, setting up a route, and starting the server.
 
 ```go
 func main() {
@@ -48,7 +48,7 @@ go run main.go
 
 ### Check out the fancy startup message
 
-This message will also contain some of your **Config** settings, just for convenience.
+This message will also contain some of your **[Config](#typeConfig)** settings, just for convenience.
 
 <img src="https://github.com/user-attachments/assets/7594c989-fc15-4b5a-b1f2-e3d7f9b68252" alt="screenshot" width="300"/>
 
@@ -58,9 +58,9 @@ Here is a list of middleware that are included within the **Fluxx**.
 
 | Title | Description |
 | :------- | :------- |
-| [rid]() | Allow to track Request ID, creates one if there's none. |
-| [timeout]() | Sets a time to handle the request. |
-| [key]() | Simple API Key validator. |
+| [rid](https://github.com/romssc/fluxx/tree/9f657007e7c081c3823537b2513ae345f9f593b1/middleware/rid) | Allow to track Request ID, creates one if there's none. |
+| [timeout](https://github.com/romssc/fluxx/tree/9f657007e7c081c3823537b2513ae345f9f593b1/middleware/timeout) | Sets a time to handle the request. |
+| [key](https://github.com/romssc/fluxx/tree/9f657007e7c081c3823537b2513ae345f9f593b1/middleware/key) | Simple API Key validator. |
 
 ## 📄 Documentation <a name="index"></a>
 
@@ -254,6 +254,7 @@ type FluxxHandlerFunc func(c *Ctx)
 ## 🏴󠁩󠁤󠁳󠁭󠁿 License
 
 [MIT](https://opensource.org/license/mit)
+
 
 
 
