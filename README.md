@@ -8,7 +8,7 @@
 
 Designed to stay close to the **Go** **[standard library](https://pkg.go.dev/std)**, but with just enough ergonomics to make your web server development simpler!
 
-## 🕷️ Quick Start
+## 🕸️ Quick Start
 
 This guide will follow you through your first steps to use this package.
 
@@ -256,6 +256,7 @@ type FluxxHandlerFunc func(c *Ctx)
 ## 🏴󠁩󠁤󠁳󠁭󠁿 License
 
 [MIT](https://opensource.org/license/mit)
+
 
 
 
