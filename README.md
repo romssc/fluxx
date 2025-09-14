@@ -1,10 +1,12 @@
 ⚠️ ***Status:** package is under development — APIs may change.*
 
+<img src="https://github.com/user-attachments/assets/d5447791-c42c-421b-9bde-fdbbdad407f1" alt="logo" width="200"/>
+
 **Fluxx** is a lightweight, opinionated HTTP library for **Go**. It provides a thin abstraction over the **Go** **[net/http](https://pkg.go.dev/net/http@go1.25.1)** package, with utilities for request reading, response sending, and graceful server lifecycle management.
 
 Designed to stay close to the **Go** **[standard library](https://pkg.go.dev/std)**, but with just enough ergonomics to make your web server development simpler!
 
-## ⚡ Quick Start
+## 🕷️ Quick Start
 
 This guide will follow you through your first steps to use this package.
 
@@ -48,7 +50,17 @@ go run main.go
 
 This message will also contain some of your **Config** settings, just for convenience.
 
-<img src="https://github.com/user-attachments/assets/7594c989-fc15-4b5a-b1f2-e3d7f9b68252" alt="screenshot" width="400"/>
+<img src="https://github.com/user-attachments/assets/7594c989-fc15-4b5a-b1f2-e3d7f9b68252" alt="screenshot" width="300"/>
+
+## 🧬 Middleware
+
+Here is a list of middleware that are included within the **Fluxx**.
+
+| Title | Description |
+| :------- | :------- |
+| [rid]() | Allow to track Request ID, creates one if there's none. |
+| [timeout]() | Sets a time to handle the request. |
+| [key]() | Simple API Key validator. |
 
 ## 📄 Documentation <a name="index"></a>
 
@@ -242,6 +254,7 @@ type FluxxHandlerFunc func(c *Ctx)
 ## 🏴󠁩󠁤󠁳󠁭󠁿 License
 
 [MIT](https://opensource.org/license/mit)
+
 
 
 
